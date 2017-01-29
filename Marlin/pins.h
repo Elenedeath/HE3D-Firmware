@@ -170,8 +170,6 @@
   #include "pins_AJ4P.h"
 #elif MB(MKS_13)
   #include "pins_MKS_13.h"
-#elif MB(MKS_15)
-  #include "pins_MKS_15.h"
 #elif MB(SAINSMART_2IN1)
   #include "pins_SAINSMART_2IN1.h"
 #else
