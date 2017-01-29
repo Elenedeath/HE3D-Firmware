@@ -256,7 +256,7 @@
   #define MSG_ZSTEPS                          "Zsteps/mm"
 #endif
 #ifndef MSG_ESTEPS
-  #define MSG_ESTEPS                          "Esteps/mm"
+  #define MSG_ESTEPS                          "Esteps"
 #endif
 #ifndef MSG_TEMPERATURE
   #define MSG_TEMPERATURE                     "Temperature"
