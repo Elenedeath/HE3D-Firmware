@@ -1,33 +1,24 @@
-/**
- * Marlin 3D Printer Firmware
- * Copyright (C) 2016 MarlinFirmware [https://github.com/MarlinFirmware/Marlin]
+/* Arduino SdFat Library
+ * Copyright (C) 2009 by William Greiman
  *
- * Based on Sprinter and grbl.
- * Copyright (C) 2011 Camiel Gubbels / Erik van der Zalm
+ * This file is part of the Arduino SdFat Library
  *
- * This program is free software: you can redistribute it and/or modify
+ * This Library is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
  * the Free Software Foundation, either version 3 of the License, or
  * (at your option) any later version.
  *
- * This program is distributed in the hope that it will be useful,
+ * This Library is distributed in the hope that it will be useful,
  * but WITHOUT ANY WARRANTY; without even the implied warranty of
  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
  * GNU General Public License for more details.
  *
  * You should have received a copy of the GNU General Public License
- * along with this program.  If not, see <http://www.gnu.org/licenses/>.
- *
- */
-
-/**
- * Arduino SdFat Library
- * Copyright (C) 2009 by William Greiman
- *
- * This file is part of the Arduino Sd2Card Library
+ * along with the Arduino SdFat Library.  If not, see
+ * <http://www.gnu.org/licenses/>.
  */
 #include "Marlin.h"
-#if ENABLED(SDSUPPORT)
+#ifdef SDSUPPORT
 
 #ifndef SdFatStructs_h
 #define SdFatStructs_h
@@ -37,7 +28,7 @@
  * \file
  * \brief FAT file structures
  */
-/**
+/*
  * mostly from Microsoft document fatgen103.doc
  * http://www.microsoft.com/whdc/system/platform/firmware/fatgen.mspx
  */
@@ -64,9 +55,9 @@ struct partitionTable {
            */
   uint8_t  boot;
           /**
-           * Head part of Cylinder-head-sector address of the first block in
-           * the partition. Legal values are 0-255. Only used in old PC BIOS.
-           */
+            * Head part of Cylinder-head-sector address of the first block in
+            * the partition. Legal values are 0-255. Only used in old PC BIOS.
+            */
   uint8_t  beginHead;
           /**
            * Sector part of Cylinder-head-sector address of the first block in
@@ -343,13 +334,13 @@ struct fat32_boot {
           /**
            * This field is only defined for FAT32 media and does not exist on
            * FAT12 and FAT16 media.
-           * Bits 0-3 -- Zero-based number of active FAT.
-           *             Only valid if mirroring is disabled.
-           * Bits 4-6 -- Reserved.
-           * Bit 7  -- 0 means the FAT is mirrored at runtime into all FATs.
-           *        -- 1 means only one FAT is active; it is the one referenced
-           *             in bits 0-3.
-           * Bits 8-15  -- Reserved.
+           * Bits 0-3  -- Zero-based number of active FAT.
+           *              Only valid if mirroring is disabled.
+           * Bits 4-6  -- Reserved.
+           * Bit 7     -- 0 means the FAT is mirrored at runtime into all FATs.
+           *           -- 1 means only one FAT is active; it is the one referenced
+           *              in bits 0-3.
+           * Bits 8-15 -- Reserved.
            */
   uint16_t fat32Flags;
           /**
@@ -567,9 +558,9 @@ struct directoryVFATEntry {
    *  bit 6:   indicates first long filename block for the next file
    *  bit 0-4: the position of this long filename block (first block is 1)
    */
-  uint8_t  sequenceNumber;
+  uint8_t sequenceNumber;
   /** First set of UTF-16 characters */
-  uint16_t name1[5];//UTF-16
+  uint8_t name1[10];//UTF-16
   /** attributes (at the same location as in directoryEntry), always 0x0F */
   uint8_t  attributes;
   /** Reserved for use by Windows NT. Always 0. */
@@ -577,11 +568,11 @@ struct directoryVFATEntry {
   /** Checksum of the short 8.3 filename, can be used to checked if the file system as modified by a not-long-filename aware implementation. */
   uint8_t  checksum;
   /** Second set of UTF-16 characters */
-  uint16_t name2[6];//UTF-16
+  uint8_t name2[12];//UTF-16
   /** firstClusterLow is always zero for longFilenames */
   uint16_t firstClusterLow;
   /** Third set of UTF-16 characters */
-  uint16_t name3[2];//UTF-16
+  uint8_t name3[4];//UTF-16
 } PACKED;
 //------------------------------------------------------------------------------
 // Definitions for directory entries
