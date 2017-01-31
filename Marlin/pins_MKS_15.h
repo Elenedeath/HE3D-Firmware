@@ -48,17 +48,11 @@
 
 #define PS_ON_PIN          12
 #define TEMP_0_PIN         13   // ANALOG NUMBERING
-#define TEMP_1_PIN         14   // ANALOG NUMBERING
-#define TEMP_BED_PIN       15   // ANALOG NUMBERING
+#define TEMP_1_PIN         15   // ANALOG NUMBERING
+#define TEMP_BED_PIN       14   // ANALOG NUMBERING
 
 #undef FIL_RUNOUT_PIN
 #define FIL_RUNOUT_PIN     11
-
-/*Ramps Config
-#define TEMP_0_PIN         13   // Analog Input
-#define TEMP_1_PIN         15   // Analog Input
-#define TEMP_BED_PIN       14   // Analog Input
-*/
 
 #if ENABLED(VIKI2) || ENABLED(miniVIKI)
   /**
