@@ -27,10 +27,12 @@
 		#define FIL_RUNOUT_PIN     11
 		
 # Where to connect the sensor?
+You need to put your endstop on pin D11 is the third pin after the z min endstop
+
 see this
 
 ![alt tag](https://github.com/Elenedeath/HE3D-Firmware/blob/Runout-Sensor/D11%20pins.jpg)
 
-and this
+and this for help
 
 ![alt tag](https://github.com/Elenedeath/HE3D-Firmware/blob/Runout-Sensor/D11%20pins-2.jpg)
