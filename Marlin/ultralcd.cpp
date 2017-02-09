@@ -498,6 +498,14 @@ static void lcd_control_menu()
 #ifdef FWRETRACT
     MENU_ITEM(submenu, MSG_RETRACT, lcd_control_retract_menu);
 #endif
+#ifdef CASE_LIGHTS
+	if (caselights_enabled == false)
+	{
+	MENU_ITEM(gcode, MSG_CASE_LIGHTS_ON, PSTR("M210 S1"));
+	}else{
+	MENU_ITEM(gcode, MSG_CASE_LIGHTS_OFF, PSTR("M210 S0"));
+	}
+#endif
 #ifdef EEPROM_SETTINGS
     MENU_ITEM(function, MSG_STORE_EPROM, Config_StoreSettings);
     MENU_ITEM(function, MSG_LOAD_EPROM, Config_RetrieveSettings);
