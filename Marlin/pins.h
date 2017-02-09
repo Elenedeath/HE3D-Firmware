@@ -1314,6 +1314,7 @@
 
 #define FAN_PIN            7
 //additional FAN1 PIN (e.g. useful for electronics fan or light on/off) on PIN 8
+#define FAN2_PIN            8
 
 #define PS_ON_PIN          45
 #define KILL_PIN           46
