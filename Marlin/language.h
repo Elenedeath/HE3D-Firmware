@@ -45,6 +45,9 @@
 #define STRINGIFY(n) STRINGIFY_(n)
 
 #if LANGUAGE_CHOICE == 1
+//custom Elenedeath
+	#define MSG_CASE_LIGHTS_ON "Case Lights On"
+	#define MSG_CASE_LIGHTS_OFF "Case Lights Off"
 
 // LCD Menu Messages
 	#define WELCOME_MSG MACHINE_NAME " Ready."
