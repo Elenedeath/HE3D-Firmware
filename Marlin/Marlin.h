@@ -216,6 +216,10 @@ extern bool position_error;
 extern unsigned char fanSpeedSoftPwm;
 #endif
 
+#ifdef CASE_LIGHTS
+extern bool caselights_enabled;
+#endif
+
 #ifdef FWRETRACT
 extern bool autoretract_enabled;
 extern bool retracted;
