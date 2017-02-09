@@ -214,6 +214,12 @@ int EtoPPressure=0;
 #endif
 bool position_error;
 
+#if defined(CASE_LIGHTS) && CASE_LIGHTS_DEFAULT_ON > 0
+  bool caselights_enabled=true;
+#else
+  bool caselights_enabled=false;
+#endif
+
 #ifdef FWRETRACT
   bool autoretract_enabled=false;
   bool retracted=false;
@@ -396,6 +402,10 @@ void setup_powerhold()
   #if defined(PS_ON_PIN) && PS_ON_PIN > -1
     SET_OUTPUT(PS_ON_PIN);
     WRITE(PS_ON_PIN, PS_ON_AWAKE);
+  #endif
+  #if defined(CASE_LIGHTS) && CASE_LIGHTS_DEFAULT_ON > 0
+    SET_OUTPUT(CASE_LIGHTS_PIN);
+    WRITE(CASE_LIGHTS_PIN, HIGH);
   #endif
 }
 
@@ -1786,6 +1796,36 @@ void process_commands()
 
     }break;
     #endif // FWRETRACT
+	
+    #ifdef CASE_LIGHTS && CASE_LIGHTS_PIN > 0
+    case 210: // M210 - S<1=true/0=false> enable Case Lights On/Off
+    {
+      if(code_seen('S'))
+      {
+        int t= code_value() ;
+        switch(t)
+        {
+          case 0:
+			caselights_enabled=false;
+			SET_OUTPUT(CASE_LIGHTS_PIN);
+		    WRITE(CASE_LIGHTS_PIN, LOW);
+          break;
+          case 1:
+			caselights_enabled=true;
+			SET_OUTPUT(CASE_LIGHTS_PIN);
+		    WRITE(CASE_LIGHTS_PIN, HIGH);
+          break;
+          default:
+            SERIAL_ECHO_START;
+            SERIAL_ECHOPGM(MSG_UNKNOWN_COMMAND);
+            SERIAL_ECHO(cmdbuffer[bufindr]);
+            SERIAL_ECHOLNPGM("\"");
+        }
+      }
+
+    }break;
+    #endif // CASE_LIGHTS
+	    
     #if EXTRUDERS > 1
     case 218: // M218 - set hotend offset (in mm), T<extruder_number> X<offset_on_X> Y<offset_on_Y>
     {
