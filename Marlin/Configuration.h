@@ -146,7 +146,7 @@
 #define EXTRUDERS 2
 
 // Enable if your E steppers or extruder gear ratios are not identical
-#define DISTINCT_E_FACTORS
+//#define DISTINCT_E_FACTORS
 
 // For Cyclops or any "multi-extruder" that shares a single nozzle.
 //#define SINGLENOZZLE
