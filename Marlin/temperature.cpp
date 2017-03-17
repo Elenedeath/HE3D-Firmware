@@ -32,7 +32,6 @@
 #include "Marlin.h"
 #include "ultralcd.h"
 #include "lifetime_stats.h"
-#include "UltiLCD2.h"
 #include "temperature.h"
 #include "watchdog.h"
 #include "Sd2Card.h"

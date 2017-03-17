@@ -30,7 +30,6 @@
 #include "Marlin.h"
 
 #include "ultralcd.h"
-#include "UltiLCD2.h"
 #include "planner.h"
 #include "stepper.h"
 #include "temperature.h"
@@ -1825,7 +1824,7 @@ void process_commands()
 
     }break;
     #endif // CASE_LIGHTS
-	    
+	
     #if EXTRUDERS > 1
     case 218: // M218 - set hotend offset (in mm), T<extruder_number> X<offset_on_X> Y<offset_on_Y>
     {

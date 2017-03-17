@@ -24,13 +24,25 @@
 #define PROTOCOL_VERSION "1.0"
 
 #if MOTHERBOARD == 7 || MOTHERBOARD == 71 || MOTHERBOARD == 72
+	#ifdef CUSTOM_MENDEL_NAME
+		#define MACHINE_NAME CUSTOM_MENDEL_NAME
+	#else
 	#define MACHINE_NAME "Ultimaker"
+	#endif
 	#define FIRMWARE_URL "http://github.com/Ultimaker"
 #elif MOTHERBOARD == 80
+	#ifdef CUSTOM_MENDEL_NAME
+		#define MACHINE_NAME CUSTOM_MENDEL_NAME
+	#else
 	#define MACHINE_NAME "Rumba"
+	#endif
 	#define FIRMWARE_URL "https://github.com/ErikZalm/Marlin/"
 #elif MOTHERBOARD == 77
+	#ifdef CUSTOM_MENDEL_NAME
+		#define MACHINE_NAME CUSTOM_MENDEL_NAME
+	#else
 	#define MACHINE_NAME "3Drag"
+	#endif
 	#define FIRMWARE_URL "http://3dprint.elettronicain.it/"
 #else
 	#ifdef CUSTOM_MENDEL_NAME

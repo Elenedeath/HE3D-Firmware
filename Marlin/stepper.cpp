@@ -26,7 +26,6 @@
 #include "planner.h"
 #include "temperature.h"
 #include "ultralcd.h"
-#include "UltiLCD2.h"
 #include "language.h"
 #include "lifetime_stats.h"
 #include "cardreader.h"

@@ -57,7 +57,6 @@
 #include "temperature.h"
 #include "lifetime_stats.h"
 #include "ultralcd.h"
-#include "UltiLCD2.h"
 #include "language.h"
 
 //===========================================================================

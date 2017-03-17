@@ -1,6 +1,5 @@
 #include "Marlin.h"
 #include "cardreader.h"
-#include "UltiLCD2.h"
 #include "ultralcd.h"
 #include "stepper.h"
 #include "temperature.h"
