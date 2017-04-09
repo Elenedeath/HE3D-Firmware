@@ -3,8 +3,8 @@
 # Ultimaker2Marlin - Master Branch
   - Latest Commits
   
-		Commits on Jan 12, 2017
-		Merge pull request #122 from Ultimaker/EM-1311_build_plate_can_raise 68a1ade
+		Commits on Mar 20, 2017
+		Merge branch 'EM-1392_fix_53_day_temperature_error'
 
   - Configuration_adv.h
   
