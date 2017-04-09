@@ -60,6 +60,8 @@
 //custom Elenedeath
 	#define MSG_CASE_LIGHTS_ON "Case Lights On"
 	#define MSG_CASE_LIGHTS_OFF "Case Lights Off"
+	#define MSG_ATX_ON "ATX On"
+	#define MSG_ATX_OFF "ATX Off"
 
 // LCD Menu Messages
 	#define WELCOME_MSG MACHINE_NAME " Ready."

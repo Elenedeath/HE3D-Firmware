@@ -411,6 +411,24 @@ const bool Z_ENDSTOPS_INVERTING = true; // set to true to invert the logic of th
 #endif
 
 //===========================================================================
+//=========================== Case Light support ============================
+//========================== Writed by Elenedeath ===========================
+//===========================================================================
+#if defined(CASE_LIGHTS)
+  #define CASE_LIGHTS_PIN FAN2_PIN
+  #define CASE_LIGHTS_DEFAULT_ON 1
+#endif
+
+//===========================================================================
+//=============================== ATX support ===============================
+//========================== Writed by Elenedeath ===========================
+//===========================================================================
+#if defined(ATX_Switch)
+  #define ATX_PIN PS_ON_PIN
+  #define ATX_DEFAULT_ON 0
+#endif
+
+//===========================================================================
 //=============================Additional Features===========================
 //===========================================================================
 
@@ -617,14 +635,6 @@ const bool Z_ENDSTOPS_INVERTING = true; // set to true to invert the logic of th
 
 // Bed leveling wizard configuration
 #define LEVELING_OFFSET 0.1				// Assumed thickness of feeler gauge/paper used in leveling (mm)
-
-/*********************************************************************\
-* Case Light support
-* Writed by Elenedeath
-**********************************************************************/
-//#define CASE_LIGHTS
-#define CASE_LIGHTS_PIN FAN2_PIN
-#define CASE_LIGHTS_DEFAULT_ON 1
 
 #include "Configuration_adv.h"
 #include "thermistortables.h"

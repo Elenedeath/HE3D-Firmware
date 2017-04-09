@@ -220,6 +220,10 @@ extern unsigned char fanSpeedSoftPwm;
 extern bool caselights_enabled;
 #endif
 
+#ifdef ATX_Switch
+extern bool ATX_enabled;
+#endif
+
 #ifdef FWRETRACT
 extern bool autoretract_enabled;
 extern bool retracted;

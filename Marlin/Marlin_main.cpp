@@ -219,6 +219,12 @@ bool position_error;
   bool caselights_enabled=false;
 #endif
 
+#if defined(ATX_Switch) && ATX_DEFAULT_ON > 0
+  bool ATX_enabled=true;
+#else
+  bool ATX_enabled=false;
+#endif
+
 #ifdef FWRETRACT
   bool autoretract_enabled=false;
   bool retracted=false;
@@ -398,9 +404,13 @@ void setup_powerhold()
     SET_OUTPUT(SUICIDE_PIN);
     WRITE(SUICIDE_PIN, HIGH);
   #endif
-  #if defined(PS_ON_PIN) && PS_ON_PIN > -1
+  // #if defined(PS_ON_PIN) && PS_ON_PIN > -1
+  #if defined(ATX_Switch) && PS_ON_PIN > -1 && ATX_DEFAULT_ON > 0
     SET_OUTPUT(PS_ON_PIN);
     WRITE(PS_ON_PIN, PS_ON_AWAKE);
+  #else
+    SET_OUTPUT(PS_ON_PIN);
+    WRITE(PS_ON_PIN, PS_ON_ASLEEP);
   #endif
   #if defined(CASE_LIGHTS) && CASE_LIGHTS_DEFAULT_ON > 0
     SET_OUTPUT(CASE_LIGHTS_PIN);
@@ -1562,8 +1572,10 @@ void process_commands()
       #endif //HEATER_2_PIN
     #endif
 
-    #if defined(PS_ON_PIN) && PS_ON_PIN > -1
+    // #if defined(PS_ON_PIN) && PS_ON_PIN > -1
+    #if defined(ATX_Switch) && PS_ON_PIN > -1
       case 80: // M80 - ATX Power On
+        ATX_enabled=true;
         SET_OUTPUT(PS_ON_PIN); //GND
         WRITE(PS_ON_PIN, PS_ON_AWAKE);
         break;
@@ -1574,7 +1586,9 @@ void process_commands()
       #if defined(SUICIDE_PIN) && SUICIDE_PIN > -1
         st_synchronize();
         suicide();
-      #elif defined(PS_ON_PIN) && PS_ON_PIN > -1
+      // #elif defined(PS_ON_PIN) && PS_ON_PIN > -1
+      #elif defined(ATX_Switch) && PS_ON_PIN > -1
+        ATX_enabled=false;
         SET_OUTPUT(PS_ON_PIN);
         WRITE(PS_ON_PIN, PS_ON_ASLEEP);
       #endif
