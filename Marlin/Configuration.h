@@ -414,6 +414,7 @@ const bool Z_ENDSTOPS_INVERTING = true; // set to true to invert the logic of th
 //=========================== Case Light support ============================
 //========================== Writed by Elenedeath ===========================
 //===========================================================================
+//#define CASE_LIGHTS
 #if defined(CASE_LIGHTS)
   #define CASE_LIGHTS_PIN FAN2_PIN
   #define CASE_LIGHTS_DEFAULT_ON 1
@@ -423,6 +424,7 @@ const bool Z_ENDSTOPS_INVERTING = true; // set to true to invert the logic of th
 //=============================== ATX support ===============================
 //========================== Writed by Elenedeath ===========================
 //===========================================================================
+//#define ATX_Switch
 #if defined(ATX_Switch)
   #define ATX_PIN PS_ON_PIN
   #define ATX_DEFAULT_ON 0
