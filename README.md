@@ -18,21 +18,17 @@
 
   - pins_RAMPS.h
   
-		#define SERVO0_PIN       -1
-		#define FIL_RUNOUT_PIN      11
+		revert #define SERVO0_PIN       11
+		#define FIL_RUNOUT_PIN      12
 		
   - pins_MKS_15.h
   
 		#undef FIL_RUNOUT_PIN
-		#define FIL_RUNOUT_PIN     11
+		#define FIL_RUNOUT_PIN     12
 		
 # Where to connect the sensor?
 You need to put your endstop on pin D11 is the third pin after the z min endstop
 
-see this
+see this for help
 
-![alt tag](https://github.com/Elenedeath/HE3D-Firmware/blob/Runout-Sensor/D11%20pins.jpg)
-
-and this for help
-
-![alt tag](https://github.com/Elenedeath/HE3D-Firmware/blob/Runout-Sensor/D11%20pins-2.jpg)
+![alt tag](https://github.com/Elenedeath/HE3D-Firmware/blob/Runout-Sensor/D12%20pins.jpg)
