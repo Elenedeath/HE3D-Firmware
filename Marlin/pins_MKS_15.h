@@ -52,7 +52,7 @@
 #define TEMP_BED_PIN       14   // ANALOG NUMBERING
 
 #undef FIL_RUNOUT_PIN
-#define FIL_RUNOUT_PIN     11
+#define FIL_RUNOUT_PIN     12
 
 #if ENABLED(VIKI2) || ENABLED(miniVIKI)
   /**
